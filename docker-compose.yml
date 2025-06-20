@@ -5,13 +5,18 @@ services:
     image: mysql:8.0
     container_name: gastos_clientes_mysql
     restart: always
-    ports:
-      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: gastos_clientes_db
+      MYSQL_ROOT_PASSWORD: asako9029
+    ports:
+      - "3307:3306"  # Puerto externo 3307 (host) -> interno 3306 (contenedor)
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - gastos_net
 
 volumes:
   mysql_data:
+
+networks:
+  gastos_net:
