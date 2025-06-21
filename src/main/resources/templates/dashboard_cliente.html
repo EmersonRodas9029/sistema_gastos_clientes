@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel del Cliente</title>
+</head>
+<body>
+<h2 th:text="'Bienvenido, ' + ${usuario.username}">Bienvenido</h2>
+
+<h3>Datos del Cliente:</h3>
+<p><strong>Nombre:</strong> <span th:text="${cliente.nombre}">Nombre</span></p>
+<p><strong>NIT:</strong> <span th:text="${cliente.nit}">NIT</span></p>
+<p><strong>Empresa:</strong> <span th:text="${cliente.empresa}">Empresa</span></p>
+
+<!-- Puedes mostrar más información del cliente o enlaces a sus gastos -->
+
+<p><a href="/logout">Cerrar Sesión</a></p>
+</body>
+</html>

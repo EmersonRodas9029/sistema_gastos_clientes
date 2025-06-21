@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel del Contador</title>
+</head>
+<body>
+<h2 th:text="'Bienvenido Contador, ' + ${usuario.username}">Bienvenido</h2>
+
+<h3>Clientes Registrados:</h3>
+<div th:each="cliente : ${clientes}">
+    <div style="border: 1px solid gray; padding: 10px; margin-bottom: 10px;">
+        <p><strong>Nombre:</strong> <span th:text="${cliente.nombre}">Nombre</span></p>
+        <p><strong>Empresa:</strong> <span th:text="${cliente.empresa}">Empresa</span></p>
+        <p><strong>NIT:</strong> <span th:text="${cliente.nit}">NIT</span></p>
+        <a th:href="@{/clientes/{id}(id=${cliente.id})}">Ver detalles</a>
+    </div>
+</div>
+
+<p><a href="/logout">Cerrar Sesión</a></p>
+</body>
+</html>
