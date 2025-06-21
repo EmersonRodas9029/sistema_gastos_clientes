@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle del Cliente</title>
+</head>
+<body>
+<h2 th:text="'Cliente: ' + ${cliente.nombre}"></h2>
+
+<p><strong>DUI:</strong> <span th:text="${cliente.dui}">---</span></p>
+<p><strong>NIT:</strong> <span th:text="${cliente.nit}">---</span></p>
+<p><strong>Empresa:</strong> <span th:text="${cliente.empresa}">---</span></p>
+<p><strong>Teléfono:</strong> <span th:text="${cliente.telefono}">---</span></p>
+<p><strong>Correo:</strong> <span th:text="${cliente.correo}">---</span></p>
+
+<h3>Gastos Registrados</h3>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Fecha</th>
+    <th>Monto</th>
+    <th>Categoría</th>
+    <th>Descripción</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="gasto : ${gastos}">
+    <td th:text="${gasto.fecha}"></td>
+    <td th:text="${gasto.monto}"></td>
+    <td th:text="${gasto.categoria}"></td>
+    <td th:text="${gasto.descripcion}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<br>
+<a th:href="@{'/gastos/nuevo?clienteId=' + ${cliente.id}}">Registrar Nuevo Gasto</a> |
+<a th:href="@{'/reportes/cliente/' + ${cliente.id} + '/pdf'}">Exportar a PDF</a> |
+<a th:href="@{/dashboard}">Volver al Dashboard</a>
+
+</body>
+</html>
