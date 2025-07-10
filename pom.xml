@@ -99,12 +99,12 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- JasperReports (para PDF) -->
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-			<version>6.20.0</version>
-		</dependency>
+		<!-- JasperReports (para PDF) --><dependency>
+		<groupId>net.sf.jasperreports</groupId>
+		<artifactId>jasperreports</artifactId>
+		<version>6.20.0</version>
+	</dependency>
+
 
 		<!-- iText para PDF (compatible con JasperReports) -->
 		<dependency>
