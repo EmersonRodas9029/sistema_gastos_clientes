@@ -8,4 +8,6 @@ import java.util.List;
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
     List<Categoria> findByClienteId(Long clienteId);
     boolean existsByClienteIdAndNombre(Long clienteId, String nombre);
+    List<Categoria> findByClienteIdAndActivaTrue(Long clienteId);
+
 }
